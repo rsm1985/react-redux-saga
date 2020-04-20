@@ -8,13 +8,8 @@ export const usersReducer = (state = defaultState, action) => {
     switch (action.type) {
         case 'GET_USERS':
             return { ...state, loading: true };
-        // case SAVE_FILTERED_DEVICES: {
-        //     return {
-        //         ...state,
-        //         filteredDevices: payload
-        //     };
-        // }
-
+        case 'USERS_RECEIVED':
+            return { ...state, news: action.json, loading: false }
         default:
             return state;
     }
